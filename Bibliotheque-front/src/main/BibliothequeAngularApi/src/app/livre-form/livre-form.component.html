@@ -1,0 +1,40 @@
+<div>
+    <form class="col-md-4" #userForm = "ngForm">
+
+        <p>
+            <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Titre</mat-label>
+            <input matInput type="text" matInput placeholder="Titre" name = "Titre" [(ngModel)]= "livre.titre">
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Auteur</mat-label>
+            <input matInput type="text" matInput placeholder="Auteur" name = "Auteur" [(ngModel)]= "livre.auteur">
+            </mat-form-field>
+        </p>
+
+        
+        <p>
+            <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Illustrateur</mat-label>
+            <input matInput type="text" matInput placeholder="Illustrateur" name = "Illustrateur" [(ngModel)]= "livre.illustrateur">  
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Editeur</mat-label>
+            <input matInput type="text" matInput placeholder="Editeur" name="Editeur" [(ngModel)]= "livre.editeur">  
+            </mat-form-field>
+        </p>
+
+
+        <button (click)= "postLivre()" type="submit" mat-raised-button color="primary">Add</button>
+
+    </form>
+
+</div>
+
+

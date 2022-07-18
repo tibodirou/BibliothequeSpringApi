@@ -1,0 +1,59 @@
+
+
+<div class="container" >
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+
+    </div>
+    <mat-card-title>{{name}}</mat-card-title>
+    </mat-card-header>
+</div>
+
+<div class="container" >
+      <table mat-table matSort [dataSource]= "dataSource" class="mat-elevation-z8">
+      
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="titre" >
+          <th mat-header-cell mat-sort-header *matHeaderCellDef > Titre </th>
+          <td mat-cell *matCellDef= "let livre"> {{livre.titre}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="auteur">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef > Auteur </th>
+          <td mat-cell *matCellDef= "let livre"> {{livre.auteur}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="illustrateur">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Illustrateur </th>
+          <td mat-cell *matCellDef= "let livre"> {{livre.illustrateur}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="editeur">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Editeur </th>
+          <td mat-cell *matCellDef= "let livre"> {{livre.editeur}} </td>
+        </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="collection">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Collection </th>
+            <td mat-cell *matCellDef= "let livre"> {{livre.collection}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef= "columnsToDisplay"></tr>
+        <tr mat-row *matRowDef= "let row; columns: columnsToDisplay;" 
+            
+           (click)= "onSelectedRow(row)"></tr>
+      </table>
+      <mat-paginator 
+      [pageSize]="5"
+      aria-label="Select page">
+  </mat-paginator>
+      </div>
+
+   

@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('/assets/images/edgar-allan-poe-clipart-15.jpg');
+    background-size: cover;
+  }
+
+
+  .del{
+    text-align: right;
+  }
+
+.routingText{
+  cursor: pointer; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

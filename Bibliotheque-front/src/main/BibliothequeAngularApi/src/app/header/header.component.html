@@ -1,0 +1,24 @@
+<div>
+    <p>
+      <mat-toolbar>
+       <button mat-button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['Bibliotheque']">Bibliotheque</button>
+          <button mat-menu-item [routerLink]="['Ajout']">Ajouter un livre</button>
+        </mat-menu>
+
+      </button>
+      <span class="home-button" (click)= "toHomePage()" >Bibliotheque Api</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button (click)= "share()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+
+       <mat-icon>share</mat-icon>
+     </button>
+    </mat-toolbar>
+    </p>
+    
+  </div>
