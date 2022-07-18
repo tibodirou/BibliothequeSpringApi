@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+    
+    
+    <changeSet author="Thib" id="1">
+        <createTable tableName="auteur"> 
+          
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="auteur_pkey"/>
+            </column>  
+                               
+        </createTable>
+        <createTable tableName="illustrateur"> 
+          
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="illustrateur_pkey"/>
+            </column>  
+                               
+        </createTable>
+        
+
+        <createTable tableName="editeur"> 
+          
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="editeur_pkey"/>
+                
+            </column>  
+                               
+        </createTable>    
+        <createTable tableName="collection"> 
+          
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="collection_pkey"/>
+            </column>  
+                               
+        </createTable>    
+        
+    </changeSet>
+    
+    
+    <changeSet author="Thib" id="2">
+        <createTable tableName="livre">
+        
+            <column autoIncrement="true" name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="livre_pkey"/>
+            </column>
+                      
+            <column name="name" type="VARCHAR(255)"/>
+            
+            <column name="auteur_name" type="VARCHAR(255)">
+            	<constraints nullable="false" foreignKeyName="auteur_fkey" references="auteur(name)"/>
+            </column>
+            <column name="illustrateur_name" type="VARCHAR(255)">
+            	<constraints nullable="false" foreignKeyName="illustrateur_fkey" references="illustrateur(name)"/>
+            </column>
+            <column name="editeur_name" type="VARCHAR(255)">
+            	<constraints nullable="false" foreignKeyName="editeur_fkey" references="editeur(name)"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    
+   	<changeSet author="Thib" id="3">
+        <createTable tableName="livre_collection"> 
+          
+            <column name="livre_id" type="INTEGER">
+                <constraints nullable="false" foreignKeyName="livre_fkey" references="livre(id)"/>
+            </column>  
+            <column name="collection_name" type="VARCHAR(255)">
+                <constraints nullable="false" foreignKeyName="collection_fkey" references="collection(name)"/>
+            </column>
+                               
+        </createTable>   
+        
+    </changeSet>
+    
+    <changeSet author="Thib" id="4">
+    <createIndex tableName="livre" indexName="livre_auteur_index"><column name="auteur_name"></column></createIndex>
+    <createIndex tableName="livre" indexName="livre_illustrateur_index"><column name="illustrateur_name"></column></createIndex>
+    <createIndex tableName="livre" indexName="livre_editeur_index"><column name="editeur_name"></column></createIndex>
+    
+    <createIndex tableName="livre_collection" indexName="livre_collection_indexId"><column name="livre_id"></column></createIndex>
+    <createIndex tableName="livre_collection" indexName="livre_collection_indexName"><column name="collection_name"></column></createIndex>
+    </changeSet>
+    
+</databaseChangeLog>
