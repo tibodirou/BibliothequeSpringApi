@@ -38,7 +38,6 @@ import com.MultiBibliothequeSpringApi.serviceImpl.CollectionServiceImpl;
 import com.MultiBibliothequeSpringApi.serviceImpl.EditeurServiceImpl;
 import com.MultiBibliothequeSpringApi.serviceImpl.IllustrateurServiceImpl;
 import com.MultiBibliothequeSpringApi.serviceImpl.LivreServiceImpl;
-//comment
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
