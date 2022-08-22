@@ -4,6 +4,7 @@ import { AuteurDetailsComponent } from './auteur-details/auteur-details.componen
 import { HomeComponent } from './home/home.component';
 import { LivreDetailsComponent } from './livre-details/livre-details.component';
 import { LivreFormComponent } from './livre-form/livre-form.component';
+import { LivreModifierComponent } from './livre-modifier/livre-modifier.component';
 import { LivreTableComponent } from './livre-table/livre-table.component';
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'auteur/:id', component :AuteurDetailsComponent},
   {path:'Bibliotheque', component : LivreTableComponent},
   {path:'Ajout', component : LivreFormComponent},
-  {path: '', component : HomeComponent}
+  {path: '', component : HomeComponent},
+  {path:'Modify/:id', component : LivreModifierComponent}
 ];
 
 @NgModule({

@@ -8,6 +8,8 @@
   <artifactId>Bibliotheque-web</artifactId>
   <packaging>jar</packaging>
   
+  
+  <properties><start-class>com.MultiBibliothequeSpringApi.Application</start-class></properties>
   <dependencies>
   <dependency>
     <groupId>com.BibliothequeSpringApi</groupId>

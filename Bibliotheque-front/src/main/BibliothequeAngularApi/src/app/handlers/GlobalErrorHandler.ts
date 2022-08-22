@@ -13,6 +13,7 @@ export class GlobalErrorHandler implements ErrorHandler {
       this.notificationService.openSnackBar("Server side error", "OK")
     }
     else{
+      console.log(error.message)
       this.notificationService.openSnackBar("Client side error", "OK")
     }
     //differentes categories, differentes solutions

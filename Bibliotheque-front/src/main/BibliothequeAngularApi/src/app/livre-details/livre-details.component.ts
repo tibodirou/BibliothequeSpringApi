@@ -35,8 +35,8 @@ export class LivreDetailsComponent implements OnInit {
       }
     )
   }
-  public modifyLivre(){
-    
+  public modifyLivre() : void{
+    this.router.navigate(['/Modify', this.livre.id]);
   }
   public getAuteurDetails(): void{
     console.log(this.livre.auteur)

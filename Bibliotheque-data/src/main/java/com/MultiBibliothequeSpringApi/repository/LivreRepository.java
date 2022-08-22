@@ -53,6 +53,10 @@ public class LivreRepository {
 	    return em.createQuery("SELECT l FROM Livre l",Livre.class).getResultList();
 	}
 	
+	public Livre update(Livre livre) {
+		em.merge(livre);
+		return livre;
+	}
 	
 	
 }

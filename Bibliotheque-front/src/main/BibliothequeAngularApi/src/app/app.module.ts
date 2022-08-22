@@ -28,6 +28,7 @@ import { CustomHttpInterceptor } from './handlers/http-interceptor';
 import { GlobalErrorHandler } from './handlers/GlobalErrorHandler';
 import { MatButtonModule } from '@angular/material/button';
 import { AuteurDetailsComponent } from './auteur-details/auteur-details.component';
+import { LivreModifierComponent } from './livre-modifier/livre-modifier.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuteurDetailsComponent } from './auteur-details/auteur-details.componen
     LivreDetailsComponent,
     HeaderComponent,
     HomeComponent,
-    AuteurDetailsComponent
+    AuteurDetailsComponent,
+    LivreModifierComponent
   ],
   imports: [
     BrowserModule,

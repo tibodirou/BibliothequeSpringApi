@@ -22,7 +22,7 @@ public class LivreServiceImpl {
 	}
 	
 	public Livre update(Livre livre) {
-		return livreRepository.save(livre);
+		return livreRepository.update(livre);
 	}
 	
 	public List<Livre> findAll(){

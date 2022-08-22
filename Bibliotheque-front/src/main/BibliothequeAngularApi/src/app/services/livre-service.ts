@@ -29,6 +29,10 @@ export class LivreService {
     public deleteLivre(id: number): Observable<String> {
         return this.http.delete<String>(`${this.apiServerUrl}/Bibliotheque/api/livre/${id}`);
     }
+
+    public updateLivre(livre : Livre): Observable<Livre> {
+        return this.http.put<Livre>(`${this.apiServerUrl}/Bibliotheque/api/livre/`, livre);
+    }
 }
 
 //finir ajout de livres
