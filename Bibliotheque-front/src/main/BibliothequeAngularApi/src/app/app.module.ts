@@ -29,6 +29,7 @@ import { GlobalErrorHandler } from './handlers/GlobalErrorHandler';
 import { MatButtonModule } from '@angular/material/button';
 import { AuteurDetailsComponent } from './auteur-details/auteur-details.component';
 import { LivreModifierComponent } from './livre-modifier/livre-modifier.component';
+import { LightgalleryModule } from 'lightgallery/angular';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { LivreModifierComponent } from './livre-modifier/livre-modifier.componen
     MatMenuModule,
     MatSnackBarModule,
     MatButtonModule,
+    LightgalleryModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
