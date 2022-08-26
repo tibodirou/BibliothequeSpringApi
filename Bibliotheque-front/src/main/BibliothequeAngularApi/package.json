@@ -24,7 +24,8 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
-    "lightgallery": "~2.5.0"
+    "lightgallery": "~2.5.0",
+    "ng-openapi-gen":"~0.22.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.0",

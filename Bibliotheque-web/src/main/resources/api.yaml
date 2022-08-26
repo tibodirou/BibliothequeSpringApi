@@ -1,0 +1,167 @@
+---
+openapi: 3.0.2
+info:
+  title: Bibliotheque API
+  version: 1.0.0
+  description: Une bibliothèque de livre
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+paths:
+  /livre:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Livre'
+          description: Liste des livre obtenue
+      summary: Get all books
+    post:
+      requestBody:
+        description: Livre à créer
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Livre'
+        required: true
+      responses:
+        "201":
+          description: Livre ajouté
+      summary: Ajout d'un nouveau livre
+  /livre/{id}:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Livre'
+          description: Livre obtenu
+      summary: Get livre by id
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Livre'
+        required: true
+      responses:
+        "200":
+          description: Livre modifié
+      summary: Modifier livre
+    delete:
+      responses:
+        "200":
+          description: Livre supprimé
+      summary: Delete livre by id
+    parameters:
+    - name: id
+      description: id of the book
+      schema:
+        type: integer
+      in: path
+      required: true
+components:
+  schemas:
+    Livre:
+      title: Root Type for Livre
+      description: un livre
+      required:
+      - auteur
+      - id
+      type: object
+      properties:
+        id:
+          type: integer
+        auteur:
+          $ref: '#/components/schemas/Auteur'
+        editeur:
+          $ref: '#/components/schemas/Editeur'
+        illustrateur:
+          $ref: '#/components/schemas/Illustrateur'
+        Collection:
+          description: une collection
+          type: array
+          items:
+            $ref: '#/components/schemas/Collection'
+      example:
+        id: 42
+        auteur: louis
+        editeur: galimar
+        illustrateur: illu
+        collection:
+        - coll
+        - jeandf
+    Auteur:
+      title: Root Type for Auteur
+      description: un auteur
+      type: object
+      properties:
+        name:
+          type: string
+        livres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Livre'
+      example:
+        name: jean
+        livres:
+        - liv1
+        - liv2
+        - liv3
+    Collection:
+      title: Root Type for Collection
+      description: une collection
+      type: object
+      properties:
+        name:
+          type: string
+        livres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Livre'
+      example:
+        name: col0
+        livres:
+        - liv1
+        - liv2
+        - liv3
+    Illustrateur:
+      title: Root Type for Illustrateur
+      description: Un illustrateur
+      type: object
+      properties:
+        name:
+          type: string
+        livres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Livre'
+      example:
+        name: ill0
+        livres:
+        - liv1
+        - liv2
+        - liv3
+    Editeur:
+      title: Root Type for Editeur
+      description: Un editeur
+      type: object
+      properties:
+        name:
+          type: string
+        livres:
+          type: array
+          items:
+            $ref: '#/components/schemas/Livre'
+      example:
+        name: Edi0
+        livres:
+        - liv1
+        - liv2
+        - liv3

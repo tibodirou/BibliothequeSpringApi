@@ -4,5 +4,27 @@
     border: 3px solid black;
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 }
 
+/* Set the background color of body to tan */
+.container  {
+    background-color: tan;
+  }
+  
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 992px) {
+    .container  {
+      background-color: blue;
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 600px) {
+    .container   {
+      background-color: olive;
+    }
+  }

@@ -18,10 +18,23 @@
 
 .container {
   display: flex;
+  /*
+  position: fixed;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  */
   justify-content: center;
   align-items: center;
+
 }
 
 .routingText:hover{
   color: lightblue;
+}
+
+img{
+  background-image: url('/assets/images/poli21.jpg');
+  background-size: cover;
 }

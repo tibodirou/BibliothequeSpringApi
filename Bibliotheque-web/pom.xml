@@ -28,7 +28,6 @@
     <artifactId>Bibliotheque-front</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </dependency>
-  
   </dependencies>
   
   <build>
@@ -37,6 +36,30 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
     </plugin>
+
+    <plugin>
+    <groupId>org.openapitools</groupId>
+    <artifactId>openapi-generator-maven-plugin</artifactId>
+    <!-- RELEASE_VERSION -->
+    <version>6.0.1</version>
+    <!-- /RELEASE_VERSION -->
+    <executions>
+        <execution>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <configuration>
+                <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
+                <generatorName>spring</generatorName>
+                <apiPackage>com.bibliotheque.api</apiPackage>
+                <modelPackage>com.bibliotheque.model</modelPackage>
+                <configOptions>
+                   <sourceFolder>src/gen/java/main</sourceFolder>
+                </configOptions>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 </plugins>
 </build>
 </project>
